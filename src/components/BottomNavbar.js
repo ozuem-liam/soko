@@ -8,13 +8,13 @@ export default class BottomNavbar extends Component {
         return (
             <NavWrapper>
                 <div className="nav-bar">
-                    <Link to='/store' className="menu">
+                    <Link to='/' className="menu">
                     <img src="images/icon/account.png" alt="home"/><span>Account</span>
                     </Link>
-                    <Link to="/mall" className="menu">  
+                    <Link to="/" className="menu">  
                         <img src="images/icon/mall.png" alt="mall" /><span>Mall</span>
                     </Link>  
-                    <Link to='/store' className="menu">
+                    <Link to='/' className="menu">
                     <img src="images/icon/home.png" alt="home"/><span>Home</span>
                     </Link>
                     <Link to="/bag" className="menu">  
@@ -37,7 +37,7 @@ const NavWrapper = styled.nav`
         width: 100%;
         position: fixed;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        padding: 1rem;
+        padding: 0.5rem;
         justify-content: center;
         align-items: center;
     }
@@ -54,8 +54,8 @@ const NavWrapper = styled.nav`
 }
 img {
     @media (max-width: 768px) {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         align-self: center;
     }
 }
@@ -63,6 +63,7 @@ span {
     @media (max-width: 768px) {
         color: var(--mainDark);
         border: none;
+        font-size:0.8rem;
     }
 }
 

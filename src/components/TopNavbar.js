@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export default class TopNavbar extends Component {
     render() {
         return (
-        <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
+        <NavWrapper>
                 <div className="nav-bar">
                     <div className="topnav1">
                         <Link to="/" className="nav-link">
@@ -17,7 +17,7 @@ export default class TopNavbar extends Component {
                         <Link to="/bag" className="ml-auto">  
                             <img src="images/icon/bag.png" alt="bag" />
                         </Link> 
-                        <Link to='/account'>
+                        <Link to='/'>
                             <img src="images/icon/home.png" alt="home"/>
                         </Link>
                     </div>
@@ -38,6 +38,7 @@ const NavWrapper = styled.nav`
     @media (max-width: 768px) {
         display:flex;
         justify-content:center;
+        align-items:center;
         height:4rem;
     }
 }
@@ -50,7 +51,6 @@ h3 {
     margin: 0;
     @media (max-width: 768px) {
         display: flex;
-        align-self: center;
     }
 }
 .topnav2 {

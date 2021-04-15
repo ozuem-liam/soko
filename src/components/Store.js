@@ -31,13 +31,13 @@ searchHandler(event) {
         const { storeName, image } = this.state.user;
         return (
             <React.Fragment>
-            {/* <SearchBar /> */}
             <StoreWrapper>
                 <div>
                     <img src={image} alt="background-store" className="back-img" />
                     <Title name={storeName} title="Store" />
                 </div>
                 <div className="container">
+                     {/* <SearchBar /> */}
                     <form>
                         <input type="text"
                         placeholder="Search for a product..."
@@ -62,6 +62,7 @@ searchHandler(event) {
 }
 
 const StoreWrapper = styled.div`
+margin-bottom:4rem;
 input {
     width: 100%;
     border: 2px solid var(--mainBlue);
