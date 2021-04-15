@@ -3,6 +3,7 @@ import {Switch,Route} from 'react-router-dom';
 
 // Components
 import TopNavbar from './components/TopNavbar';
+import BottomNavbar from './components/BottomNavbar';
 import Store from './components/Store';
 import Details from './variables/Details';
 import Default from './variables/Default';
@@ -20,6 +21,7 @@ function App() {
         <Route component={Default} />
       </Switch>
       <ProductModal />
+      <BottomNavbar />
     </div>
   );
 }

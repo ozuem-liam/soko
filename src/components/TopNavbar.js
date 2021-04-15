@@ -6,22 +6,21 @@ import styled from 'styled-components';
 export default class TopNavbar extends Component {
     render() {
         return (
-        <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5 nav-bar">
-                <div className="topnav1">
-                    <Link to="/bag" className="ml-auto">  
-                        <img src="images/icon/bag.png" alt="bag" />
-                    </Link> 
-                    <Link to='/account'>
-                        <img src="images/icon/home.png" alt="home"/>
-                    </Link>
-                </div>
-                <div className="topnav2">
-                    <Link to="/store" className="nav-link">
-                        Store    
-                    </Link>
-                    <Link to="/" className="nav-link">
-                        Bar
-                    </Link>
+        <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
+                <div className="nav-bar">
+                    <div className="topnav1">
+                        <Link to="/" className="nav-link">
+                        <h3>Soko</h3>    
+                        </Link>
+                    </div>
+                    <div className="topnav2">
+                        <Link to="/bag" className="ml-auto">  
+                            <img src="images/icon/bag.png" alt="bag" />
+                        </Link> 
+                        <Link to='/account'>
+                            <img src="images/icon/home.png" alt="home"/>
+                        </Link>
+                    </div>
                 </div>
         </NavWrapper>
         )
@@ -29,32 +28,43 @@ export default class TopNavbar extends Component {
 }
 
 const NavWrapper = styled.nav`
-background:var(--mainWhite);
-display:flex;
-justify-content:space-between;
-padding: 0;
-margin:0;
-align-items: center;
-.nav-link{
-    color:var(--mainBlue)!important;
-    font-size:1.3rem;
-    text-transform:capitalize;
+.nav-bar {
+    background:var(--mainWhite);
+    display:flex;
+    justify-content:space-between;
+    padding: 0;
+    margin:0;
+    align-items: center;
+    @media (max-width: 768px) {
+        display:flex;
+        justify-content:center;
+        height:4rem;
+    }
+}
+h3 {
+  font-size: 2rem;
+}
+.topnav1 {
+    display: flex;
+    padding: 1rem;
+    margin: 0;
+    @media (max-width: 768px) {
+        display: flex;
+        align-self: center;
+    }
+}
+.topnav2 {
+    display: flex;
+    padding: 0.5rem;
+    margin: 0;
+    @media (max-width: 768px) {
+        display:none;
+    }
 }
 img {
     width: 30px;
     height: 30px;
     margin:0.3rem;
     color:var(--mainBlue)!important;
-}
-
-.topnav1 {
-    display: flex;
-    padding: 1rem;
-    margin: 0;
-}
-.topnav2 {
-    display: flex;
-    padding: 0.5rem;
-    margin: 0;
 }
 `

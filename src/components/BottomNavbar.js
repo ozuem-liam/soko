@@ -1,62 +1,69 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import {ButtonContainer} from '../variables/Button';
 import styled from 'styled-components';
 
 
 export default class BottomNavbar extends Component {
     render() {
         return (
-<NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
-                <Link to='/store'>
-                  <img src="images/icon/home.png" alt="home"/>
-                </Link>
-                <ul className="navbar">
-                    <li className="nav-item ml-5">
-                        <Link to="/store" className="nav-link">
-                            <ButtonContainer>
-                               Store
-                            </ButtonContainer>
-                        </Link>
-                    </li>              
-                    <li className="nav-item ml-5">
-                        <Link to="/account" className="nav-link">
-                           <ButtonContainer>
-                              My Account
-                            </ButtonContainer>
-                        </Link>
-                    </li>              
-                </ul>
-
-                <Link to="/bag" className="ml-auto">  
-                    <img src="images/icon/bag.png" alt="bag" />
-                </Link>  
+            <NavWrapper>
+                <div className="nav-bar">
+                    <Link to='/store' className="menu">
+                    <img src="images/icon/account.png" alt="home"/><span>Account</span>
+                    </Link>
+                    <Link to="/mall" className="menu">  
+                        <img src="images/icon/mall.png" alt="mall" /><span>Mall</span>
+                    </Link>  
+                    <Link to='/store' className="menu">
+                    <img src="images/icon/home.png" alt="home"/><span>Home</span>
+                    </Link>
+                    <Link to="/bag" className="menu">  
+                        <img src="images/icon/bag.png" alt="bag" /><span>Bag</span>
+                    </Link> 
+                </div> 
             </NavWrapper>
         )
     }
 }
 
 const NavWrapper = styled.nav`
-background:var(--mainWhite);
-display:flex;
-justify-content:space-around;
-padding: 1.5rem;
-align-items: center;
-.nav-link{
-    color:var(--mainBlue)!important;
-    font-size:1.3rem;
-    text-transform:capitalize;
+.nav-bar {
+    display:none;
+    @media (max-width: 768px) {
+        overflow: hidden;
+        display:grid;
+        background: var(--White);
+        bottom: 0;
+        width: 100%;
+        position: fixed;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
 }
-.navbar {
-    display:flex;
-    list-style:none;
-    justify-content:space-around;
-    width:40%;
+.menu {
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        border: none;
+    }
 }
 img {
-    width: 30px;
-    height: 30px;
-    color:var(--mainBlue)!important;
+    @media (max-width: 768px) {
+        width: 30px;
+        height: 30px;
+        align-self: center;
+    }
+}
+span {
+    @media (max-width: 768px) {
+        color: var(--mainDark);
+        border: none;
+    }
 }
 
 `

@@ -163,27 +163,3 @@ p {
     cursor: pointer;
 }
 `;
-
-
-
-
-{/* <div>
-{value => (
-    <div className="img-container p-5" 
-    onClick={() => 
-    value.handleDetail(id) 
-    }>
-    <Link to="/details">
-        <img src={img} alt="product" className="card-img-top" width="250" height="300" />
-    </Link>
-    <button className="cart-btn" disabled={inBag ? true : false} 
-    onClick={() => {
-        value.addToCart(id);
-        value.openModal(id); 
-    }}>
-    {inBag?(<p className="text-capitalize mb-0" disabled>
-        {" "}
-        in inBag</p>):(<i className="fas fa-cart-plus" />
-    )}
-    </button>
-</div> */}
