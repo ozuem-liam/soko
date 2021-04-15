@@ -5,11 +5,13 @@ import EmptyBag from './EmptyBag';
 import {ProductConsumer} from '../context';
 import BagList from './BagList';
 import BagTotals from './BagTotals';
+import styled from 'styled-components';
 
 export default class Bag extends Component {
     render() {
         return (
-            <section>
+            <BagWrapper>
+                <div className="bag">
                 <ProductConsumer>
                     {value =>{
                         const {bag} = value;
@@ -27,7 +29,16 @@ export default class Bag extends Component {
                         }
                     }}
                 </ProductConsumer>
-            </section>
+                </div>
+            </BagWrapper>
         )
     }
 }
+
+
+const BagWrapper = styled.div`
+.bag {
+    margin-bottom: 10rem;
+}
+
+`
